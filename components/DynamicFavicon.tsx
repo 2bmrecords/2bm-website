@@ -6,11 +6,10 @@ export default function DynamicFavicon() {
     useEffect(() => {
         // Function to update favicon based on color scheme
         const updateFavicon = () => {
-            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
 
             if (favicon) {
-                favicon.href = isDark ? '/favicon-square-dark.png' : '/favicon-square-light.png';
+                favicon.href = '/real favicon1.png';
             }
         };
 
