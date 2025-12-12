@@ -54,7 +54,7 @@ export default function Home() {
           {/* TAGLINE */}
           <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center px-4">
             <FadeIn delay={0.4} direction="up">
-              <p className="text-sm md:text-base tracking-[0.25em] md:tracking-[0.35em] uppercase text-black text-center font-medium md:whitespace-nowrap">
+              <p className="text-sm md:text-base tracking-[0.25em] md:tracking-[0.35em] uppercase text-black text-center font-medium md:whitespace-nowrap max-w-[90vw] md:max-w-none mx-auto text-balance">
                 THE HOME FOR ARTISTS WHO DEFINE TODAY&apos;S SOUND.
               </p>
             </FadeIn>
