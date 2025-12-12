@@ -46,7 +46,10 @@ export default function Home() {
                 width={500}
                 height={100}
                 className="max-w-[400px] h-auto object-contain invert"
-                style={{ filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(0,0,0,0.5))' }}
+                style={{
+                  imageRendering: 'pixelated',
+                  filter: 'contrast(125%) drop-shadow(3px 3px 0px #000)'
+                }}
                 priority
               />
             </FadeIn>
