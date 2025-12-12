@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useEffect } from "react";
 import FadeIn from "@/components/FadeIn";
 import Image from "next/image";
