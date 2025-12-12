@@ -1,18 +1,32 @@
+import { useRef, useEffect } from "react";
 import FadeIn from "@/components/FadeIn";
 import Image from "next/image";
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Ensure video plays on mobile (sometimes requires explicit play formatting)
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Video play failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <main className="-mt-24">
       <div className="relative h-[calc(100vh-96px)] bg-white">
         <section className="relative h-full w-full pb-8">
           {/* BACKGROUND VIDEO */}
           <video
+            ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover z-0"
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
           >
             <source src="/hero.mp4" type="video/mp4" />
           </video>
@@ -31,16 +45,16 @@ export default function Home() {
                 width={500}
                 height={100}
                 className="max-w-[400px] h-auto object-contain invert"
-                style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 3px rgba(0,0,0,0.8))' }}
+                style={{ filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(0,0,0,0.5))' }}
                 priority
               />
             </FadeIn>
           </div>
 
           {/* TAGLINE */}
-          <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center">
+          <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center px-4">
             <FadeIn delay={0.4} direction="up">
-              <p className="text-sm md:text-base tracking-[0.35em] uppercase text-black text-center font-medium whitespace-nowrap">
+              <p className="text-sm md:text-base tracking-[0.25em] md:tracking-[0.35em] uppercase text-black text-center font-medium md:whitespace-nowrap">
                 THE HOME FOR ARTISTS WHO DEFINE TODAY&apos;S SOUND.
               </p>
             </FadeIn>
