@@ -23,24 +23,24 @@ export default function Home() {
           {/* TAGLINE */}
 
           {/* LOGO */}
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-center items-center px-4">
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-center items-center">
             <FadeIn delay={0.2} direction="up">
               <Image
                 src="/logo.png"
                 alt="Two Biquitous Music"
                 width={500}
                 height={100}
-                className="w-[80%] md:max-w-[400px] h-auto object-contain invert"
-                style={{ filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(0,0,0,0.5))' }}
+                className="max-w-[400px] h-auto object-contain invert"
+                style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 3px rgba(0,0,0,0.8))' }}
                 priority
               />
             </FadeIn>
           </div>
 
           {/* TAGLINE */}
-          <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center px-4">
+          <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center">
             <FadeIn delay={0.4} direction="up">
-              <p className="text-xs md:text-base tracking-[0.25em] md:tracking-[0.35em] uppercase text-black text-center font-medium">
+              <p className="text-sm md:text-base tracking-[0.35em] uppercase text-black text-center font-medium whitespace-nowrap">
                 THE HOME FOR ARTISTS WHO DEFINE TODAY&apos;S SOUND.
               </p>
             </FadeIn>
