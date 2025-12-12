@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Header from '../components/Header';  // ⬅️ go UP one level
+import DynamicFavicon from '../components/DynamicFavicon';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,21 +19,7 @@ export const metadata: Metadata = {
     images: ['/logo.png'],
   },
   icons: {
-    icon: [
-      {
-        url: '/favicon-square-light.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/favicon-square-dark.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      // Fallback for browsers that don't support media queries
-      {
-        url: '/favicon-square-light.png',
-      }
-    ],
-    // Apple touch icon for iOS home screen shortcuts
+    icon: '/favicon-square-light.png',
     apple: '/favicon-square-light.png',
   },
 };
@@ -45,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <DynamicFavicon />
         <Header />
         <div className="pt-24 min-h-screen bg-white">
           {children}

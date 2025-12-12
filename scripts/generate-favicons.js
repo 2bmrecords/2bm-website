@@ -9,10 +9,10 @@ async function processImage(inputPath, outputPath) {
         const width = image.bitmap.width;
         const height = image.bitmap.height;
 
-        // Scale factor to fit 1024 max width/height
-        // We might want a little padding so it doesn't touch the edges?
-        // Let's use 90% of the target size for the actual logo to look nice.
-        const CONTENT_SIZE = TARGET_SIZE; // Use full size or maybe 960? User said "not squeezed", usually full width is fine.
+        // Scale factor to fit within the target size
+        // Use 75% of the target size for the actual logo to add breathing room
+        // This prevents the logo from looking condensed in small browser tabs
+        const CONTENT_SIZE = TARGET_SIZE * 0.75;
 
         let scale = Math.min(CONTENT_SIZE / width, CONTENT_SIZE / height);
 
