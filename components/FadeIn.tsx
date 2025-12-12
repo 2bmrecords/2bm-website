@@ -1,10 +1,12 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, ReactNode } from "react";
+
+const MotionDiv = motion.div as any; // sidestep weird MotionProps typing issues
 
 interface FadeInProps {
-    children: React.ReactNode;
+    children: ReactNode;
     className?: string;
     delay?: number;
     duration?: number;
@@ -20,7 +22,7 @@ export default function FadeIn({
     direction = "up",
     fullWidth = false,
 }: FadeInProps) {
-    const ref = useRef(null);
+    const ref = useRef<HTMLElement | null>(null);
     const isInView = useInView(ref as any, { once: true, margin: "-50px" });
 
     const getInitialProps = () => {
@@ -54,19 +56,19 @@ export default function FadeIn({
     };
 
     return (
-        <motion.div
+        <MotionDiv
             ref={ref}
             initial={getInitialProps()}
             animate={isInView ? getAnimateProps() : getInitialProps()}
             transition={{
-                duration: duration,
-                delay: delay,
-                ease: [0.21, 0.47, 0.32, 0.98], // Smooth custom easing
+                duration,
+                delay,
+                ease: [0.21, 0.47, 0.32, 0.98],
             }}
             className={className}
             style={{ width: fullWidth ? "100%" : "auto" }}
         >
             {children}
-        </motion.div>
+        </MotionDiv>
     );
 }
