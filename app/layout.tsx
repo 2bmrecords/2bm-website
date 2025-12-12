@@ -20,14 +20,20 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/logo.png',
+        url: '/favicon-square-light.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/white logo.png',
+        url: '/favicon-square-dark.png',
         media: '(prefers-color-scheme: dark)',
       },
+      // Fallback for browsers that don't support media queries
+      {
+        url: '/favicon-square-light.png',
+      }
     ],
+    // Apple touch icon for iOS home screen shortcuts
+    apple: '/favicon-square-light.png',
   },
 };
 
