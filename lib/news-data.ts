@@ -24,7 +24,7 @@ export const MOCK_NEWS: NewsItem[] = [
     {
         id: "2",
         title: "2BM: SEHAJ ANNOUNCES NEW SINGLE 'CONCRETE VINYL'",
-        description: "Rising artist, Sehaj, announces latest project release for December 2025.",
+        description: "Rising artist, Sehaj, announces latest project release for January 2026.",
         category: "Recorded Music",
         date: "2025-12-04",
         imageUrl: "/cv rollout.png",

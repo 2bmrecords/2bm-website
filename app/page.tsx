@@ -23,7 +23,7 @@ export default function Home() {
           {/* TAGLINE */}
 
           {/* LOGO */}
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-center items-center">
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-center items-center px-4">
             <FadeIn delay={0.2} direction="up">
               <Image
                 src="/logo.png"
@@ -38,9 +38,9 @@ export default function Home() {
           </div>
 
           {/* TAGLINE */}
-          <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center">
+          <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center px-4">
             <FadeIn delay={0.4} direction="up">
-              <p className="text-sm md:text-base tracking-[0.35em] uppercase text-black text-center font-medium whitespace-nowrap">
+              <p className="text-xs md:text-base tracking-[0.25em] md:tracking-[0.35em] uppercase text-black text-center font-medium">
                 THE HOME FOR ARTISTS WHO DEFINE TODAY&apos;S SOUND.
               </p>
             </FadeIn>

@@ -18,7 +18,16 @@ export const metadata: Metadata = {
     images: ['/logo.png'],
   },
   icons: {
-    icon: '/logo.png',
+    icon: [
+      {
+        url: '/logo.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/white logo.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
   },
 };
 

@@ -150,12 +150,6 @@ export default function Header() {
                   </MotionDiv>
                 ))}
               </nav>
-
-              <div className="absolute bottom-12 flex gap-6 text-sm font-medium text-neutral-500 uppercase tracking-widest">
-                <Link href="#" className="hover:text-black transition-colors">Instagram</Link>
-                <Link href="#" className="hover:text-black transition-colors">Twitter</Link>
-                <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
-              </div>
             </MotionDiv>
           )}
         </AnimatePresence>
