@@ -4,10 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+
+const MotionDiv = motion.div as any;
 
 export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +21,15 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   const base =
     'uppercase text-[16px] font-medium tracking-[0.02em] transition duration-300';
@@ -35,24 +48,24 @@ export default function Header() {
   const isHome = pathname === '/';
 
   // Header background logic
-  const headerBg = isHome && !isScrolled ? 'bg-transparent' : 'bg-white shadow-sm';
-  const textColor = isHome && !isScrolled ? 'text-white' : 'text-black';
-  const logoFilter = isHome && !isScrolled ? 'brightness-0 invert' : ''; // Make logo white on dark bg if needed, or keep as is
+  const headerBg = isHome && !isScrolled && !isMobileMenuOpen ? 'bg-transparent' : 'bg-white shadow-sm';
+  const textColor = (isHome && !isScrolled && !isMobileMenuOpen) ? 'text-white' : 'text-black';
+  const logoFilter = (isHome && !isScrolled && !isMobileMenuOpen) ? 'brightness-0 invert' : '';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}>
-      <div className={`relative flex items-center h-24 px-6 md:px-12 transition-all duration-500 ${isScrolled ? 'h-20' : 'h-24'}`}>
-        {/* LEFT: LOGO + WORDMARK IMAGE */}
-        <Link href="/" className="flex items-center gap-6 group">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${headerBg}`}>
+      <div className={`relative flex items-center justify-between h-24 px-6 md:px-12 transition-all duration-500 ${isScrolled ? 'h-20' : 'h-24'}`}>
+
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-6 group z-50">
           <Image
             src="/logo.png"
             alt="Two Biquitous Music"
             width={300}
             height={150}
-            className={`h-12 w-auto transition-all duration-300 ${logoFilter}`}
+            className={`h-10 md:h-12 w-auto transition-all duration-300 ${logoFilter}`}
             priority
           />
-
           <Image
             src="/logo2.png"
             alt="Two Biquitous Music Text Logo"
@@ -63,14 +76,13 @@ export default function Header() {
           />
         </Link>
 
-        {/* CENTER: NAV */}
+        {/* DESKTOP NAV */}
         <nav className={`absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-12 ${textColor}`}>
           {NAV_ITEMS.map((item) => {
             const isActive = item.href === '/'
               ? pathname === '/'
               : pathname.startsWith(item.href);
 
-            // Adjust active pill style based on background
             const activeStyle = isHome && !isScrolled
               ? 'bg-white text-black'
               : 'bg-black text-white';
@@ -87,10 +99,67 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Mobile Menu Button (Placeholder) */}
-        <button className={`md:hidden ml-auto ${textColor}`}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+        {/* MOBILE MENU BUTTON */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className={`md:hidden z-50 p-2 ${textColor}`}
+          aria-label="Toggle menu"
+        >
+          <div className="w-6 flex flex-col items-end gap-1.5 transition-all">
+            <span
+              className={`h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
+                }`}
+            />
+            <span
+              className={`h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'w-4'
+                }`}
+            />
+            <span
+              className={`h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-6'
+                }`}
+            />
+          </div>
         </button>
+
+        {/* MOBILE MENU OVERLAY */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <MotionDiv
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center md:hidden"
+            >
+              <nav className="flex flex-col items-center gap-8">
+                {NAV_ITEMS.map((item, i) => (
+                  <MotionDiv
+                    key={item.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.1 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-3xl font-bold tracking-tight text-black hover:text-neutral-500 transition-colors ${pathname === item.href ? 'line-through decoration-2' : ''
+                        }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </MotionDiv>
+                ))}
+              </nav>
+
+              <div className="absolute bottom-12 flex gap-6 text-sm font-medium text-neutral-500 uppercase tracking-widest">
+                <Link href="#" className="hover:text-black transition-colors">Instagram</Link>
+                <Link href="#" className="hover:text-black transition-colors">Twitter</Link>
+                <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
+              </div>
+            </MotionDiv>
+          )}
+        </AnimatePresence>
+
       </div>
     </header>
   );

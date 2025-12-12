@@ -29,10 +29,10 @@ export const MOCK_NEWS: NewsItem[] = [
         date: "2025-12-04",
         imageUrl: "/cv rollout.png",
         content: [
-            "Sehaj is set to captivate audiences with the announcement of his upcoming single, 'Concrete Vinyl', slated for release in December 2025. This new track promises to be a bold evolution of his sound, blending R&B elements with jazz-influenced melodies.",
+            "Sehaj is set to release new music with the announcement of his upcoming single, 'Concrete Vinyl', slated for release in January 2026. This new track promises to be a bold evolution of his sound, blending R&B elements with jazz-influenced melodies.",
             "This release marks a milestone for Two Biquitous Music as the first official addition to the label's catalog. 'Concrete Vinyl' represents the beginning of 2BM's journey in bringing innovative, genre-defying music to audiences and charts worldwide.",
             "Following his previous releases, Sehaj is exploring new production techniques and lyrical themes.",
-            "'Concrete Vinyl' will be available on all major streaming platforms this December."
+            "'Concrete Vinyl' will be available on all major streaming platforms this January."
         ]
     },
     {

@@ -30,7 +30,7 @@ export default function FeaturedNews({ item }: FeaturedNewsProps) {
                             <span className="text-neutral-500">{new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
                         </div>
 
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight group-hover:text-brand-blue transition-colors">
+                        <h1 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight group-hover:text-brand-blue transition-colors">
                             {item.title}
                         </h1>
 

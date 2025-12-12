@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Two Biquitous Music',
+    images: ['/logo.png'],
+  },
+  icons: {
+    icon: '/logo.png',
   },
 };
 

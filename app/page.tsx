@@ -30,8 +30,8 @@ export default function Home() {
                 alt="Two Biquitous Music"
                 width={500}
                 height={100}
-                className="max-w-[400px] h-auto object-contain invert"
-                style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 3px rgba(0,0,0,0.8))' }}
+                className="w-[80%] md:max-w-[400px] h-auto object-contain invert"
+                style={{ filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(0,0,0,0.5))' }}
                 priority
               />
             </FadeIn>
