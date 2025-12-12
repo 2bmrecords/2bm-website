@@ -1,0 +1,1 @@
+export default function Partners(){return <div className="max-w-6xl mx-auto px-6 py-16"><h1 className="h2">Partners</h1><p className='sub mt-2'>Logos & collaborations showcase.</p></div>}

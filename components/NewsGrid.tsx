@@ -1,0 +1,72 @@
+import Image from "next/image";
+import Link from "next/link";
+import FadeIn from "./FadeIn";
+
+export interface NewsItem {
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+    date: string; // ISO date string or formatted date
+    imageUrl: string;
+}
+
+interface NewsGridProps {
+    items: NewsItem[];
+}
+
+export default function NewsGrid({ items }: NewsGridProps) {
+    if (items.length === 0) {
+        return (
+            <div className="w-full py-20 text-center text-neutral-500">
+                <p>No news items found matching your criteria.</p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 font-sans">
+            {items.map((item, index) => (
+                <FadeIn key={item.id} delay={index * 0.1} className="h-full">
+                    <Link href={`/news/${item.id}`} className="group cursor-pointer flex flex-col h-full">
+                        <article className="flex flex-col h-full">
+                            <div className="relative aspect-[16/9] mb-6 overflow-hidden rounded-lg border border-neutral-100">
+                                <Image
+                                    src={item.imageUrl}
+                                    alt={item.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                {/* Overlay for hover effect */}
+                                <div className="absolute inset-0 bg-brand-blue/0 group-hover:bg-brand-blue/10 transition-colors duration-300" />
+                            </div>
+
+                            <div className="flex flex-col flex-grow">
+                                <div className="flex items-center gap-2 text-xs font-bold tracking-wider uppercase mb-3 text-neutral-500">
+                                    <span className="text-brand-blue">{item.category}</span>
+                                    <span>•</span>
+                                    <span>{new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                                </div>
+
+                                <h3 className="text-xl font-bold text-black mb-3 leading-tight group-hover:text-brand-blue transition-colors">
+                                    {item.title}
+                                </h3>
+
+                                <p className="text-neutral-600 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
+                                    {item.description}
+                                </p>
+
+                                <div className="mt-auto pt-4 border-t border-neutral-100">
+                                    <span className="text-sm font-bold text-black group-hover:text-brand-blue transition-colors flex items-center gap-2">
+                                        Read More
+                                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </Link>
+                </FadeIn>
+            ))}
+        </div>
+    );
+}

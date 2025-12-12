@@ -1,0 +1,1 @@
+export default function Contact(){return <div className="max-w-6xl mx-auto px-6 py-16"><h1 className="h2">Contact</h1><p className='sub mt-2'>General: contact@twobiquitousmusic.com • Publishing: publishing@twobiquitousmusic.com</p></div>}
