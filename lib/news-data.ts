@@ -14,7 +14,7 @@ export const MOCK_NEWS: NewsItem[] = [
         title: "2BM LAUNCHES WEBSITE",
         description: "A public launch showcasing the label's catalog initiatives and global vision.",
         category: "Innovation",
-        date: "2025-12-05",
+        date: "2025-12-14",
         imageUrl: "/launch_image.png",
         content: [
             "Two Biquitous Music (2BM) is proud to announce the launch of its official website, marking a significant milestone in the label's expansion. The new digital platform serves as a central hub for the label's growing roster of artists, catalog initiatives, and global vision.",
@@ -26,7 +26,7 @@ export const MOCK_NEWS: NewsItem[] = [
         title: "2BM: SEHAJ ANNOUNCES NEW SINGLE 'CONCRETE VINYL'",
         description: "Rising artist, Sehaj, announces latest project release for January 2026.",
         category: "Recorded Music",
-        date: "2025-12-04",
+        date: "2025-12-13",
         imageUrl: "/cv rollout.png",
         content: [
             "Sehaj is set to release new music with the announcement of his upcoming single, 'Concrete Vinyl', slated for release in January 2026. This new track promises to be a bold evolution of his sound, blending R&B elements with jazz-influenced melodies.",
@@ -40,7 +40,7 @@ export const MOCK_NEWS: NewsItem[] = [
         title: "2BM TAKES INITIATIVE WITH SYNC",
         description: "Stepping into the world of film and television, 2BM is growing its sync catalog.",
         category: "Recorded Music",
-        date: "2025-11-10",
+        date: "2025-11-26",
         imageUrl: "/sync.png",
         content: [
             "Two Biquitous Music (2BM) is making a strategic move into the world of film and television licensing with the expansion of its sync catalog. Recognizing the growing demand for high-quality, diverse music in visual media, the label is curating a specialized library tailored for music supervisors and content creators.",
