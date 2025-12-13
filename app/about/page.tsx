@@ -18,7 +18,7 @@ export default function AboutPage() {
           <FadeIn delay={0.2} direction="up">
             <div className="space-y-8 text-lg md:text-xl leading-relaxed text-neutral-800">
               <p>
-                We are <span className="font-semibold">2BM</span>, a record company focused on supporting and developing the career&apos;s of tomorrow&apos;s defining artists and shaping today&apos;s sound. Music is the backbone of life and culture, and the artists who create authentically deserve to shine globally.
+                <span className="font-semibold">2BM</span> is a record company focused on supporting and developing the career&apos;s of tomorrow&apos;s defining artists and shaping today&apos;s sound. Music is the backbone of life and culture, and the artists who create authentically deserve to shine globally.
               </p>
 
               <p>
