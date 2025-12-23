@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 
+// Fix for type errors with className on motion components
+const MotionDiv = motion.div as any;
+
 interface NewsFilterProps {
     categories: string[];
     selectedCategory: string | null;
@@ -34,7 +37,7 @@ export default function NewsFilter({
                     >
                         All News
                         {selectedCategory === null && (
-                            <motion.div
+                            <MotionDiv
                                 layoutId="activeTab"
                                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
                                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
@@ -52,7 +55,7 @@ export default function NewsFilter({
                         >
                             {category}
                             {selectedCategory === category && (
-                                <motion.div
+                                <MotionDiv
                                     layoutId="activeTab"
                                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
                                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
