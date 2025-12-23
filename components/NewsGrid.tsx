@@ -28,9 +28,9 @@ export default function NewsGrid({ items }: NewsGridProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 font-sans">
             {items.map((item, index) => (
                 <FadeIn key={item.id} delay={index * 0.1} className="h-full">
-                    <Link href={`/news/${item.id}`} className="group cursor-pointer flex flex-col h-full">
-                        <article className="flex flex-col h-full">
-                            <div className="relative aspect-[16/9] mb-6 overflow-hidden rounded-lg border border-neutral-100">
+                    <Link href={`/news/${item.id}`} className="group cursor-pointer flex flex-col h-full transform transition-transform duration-300 hover:-translate-y-1">
+                        <article className="flex flex-col h-full h-full bg-transparent">
+                            <div className="relative aspect-[16/9] mb-6 overflow-hidden rounded-lg border border-neutral-100 shadow-sm group-hover:shadow-md transition-shadow">
                                 <Image
                                     src={item.imageUrl}
                                     alt={item.title}

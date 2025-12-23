@@ -48,13 +48,16 @@ export default function Header() {
   const isHome = pathname === '/';
 
   // Header background logic
-  const headerBg = isHome && !isScrolled && !isMobileMenuOpen ? 'bg-transparent' : 'bg-white shadow-sm';
+  const headerBg = isHome && !isScrolled && !isMobileMenuOpen
+    ? 'bg-transparent'
+    : 'bg-white/85 backdrop-blur-xl shadow-sm';
+
   const textColor = (isHome && !isScrolled && !isMobileMenuOpen) ? 'text-white' : 'text-black';
   const logoFilter = (isHome && !isScrolled && !isMobileMenuOpen) ? 'brightness-0 invert' : '';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${headerBg}`}>
-      <div className={`relative flex items-center justify-between h-24 px-6 md:px-12 transition-all duration-500 ${isScrolled ? 'h-20' : 'h-24'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${headerBg}`}>
+      <div className={`relative flex items-center justify-between px-6 md:px-12 transition-all duration-500 ease-out ${isScrolled ? 'h-20' : 'h-24'}`}>
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-6 group z-50">

@@ -28,27 +28,33 @@ export default function AboutPage() {
           </FadeIn>
 
           {/* Values Section */}
+          {/* Values Section — Bolder Grid */}
           <FadeIn delay={0.4} direction="up">
-            <div className="mt-20 md:mt-32 grid md:grid-cols-3 gap-8 md:gap-12">
-              <div>
-                <h3 className="text-sm uppercase tracking-[0.3em] font-semibold mb-4 text-black">VISION</h3>
-                <p className="text-base text-neutral-700 leading-relaxed">
-                  To elevate artists who push boundaries and redefine what&apos;s possible in music and culture.
-                </p>
-              </div>
+            <div className="mt-20 md:mt-32 border-t border-neutral-200 pt-12 md:pt-20">
+              <div className="grid md:grid-cols-3 gap-12 md:gap-x-20">
+                {/* 01 VISION */}
+                <div className="group">
+                  <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">VISION</h3>
+                  <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
+                    To elevate artists who push boundaries and redefine what&apos;s possible in music and culture.
+                  </p>
+                </div>
 
-              <div>
-                <h3 className="text-sm uppercase tracking-[0.3em] font-semibold mb-4 text-black">MISSION</h3>
-                <p className="text-base text-neutral-700 leading-relaxed">
-                  Provide comprehensive support across all aspects of an artist&apos;s career, from creation to global reach.
-                </p>
-              </div>
+                {/* 02 MISSION */}
+                <div className="group">
+                  <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">MISSION</h3>
+                  <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
+                    Provide comprehensive support across all aspects of an artist&apos;s career, from creation to global reach.
+                  </p>
+                </div>
 
-              <div>
-                <h3 className="text-sm uppercase tracking-[0.3em] font-semibold mb-4 text-black">VALUES</h3>
-                <p className="text-base text-neutral-700 leading-relaxed">
-                  Authenticity, innovation, and partnership. We believe real artistry deserves to be ubiquitous.
-                </p>
+                {/* 03 VALUES */}
+                <div className="group">
+                  <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">VALUES</h3>
+                  <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
+                    Authenticity, innovation, and partnership. We believe real artistry deserves to be ubiquitous.
+                  </p>
+                </div>
               </div>
             </div>
           </FadeIn>
