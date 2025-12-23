@@ -48,7 +48,7 @@ export default function Header() {
   const isHome = pathname === '/';
 
   // Header background logic
-  const headerBg = isHome && !isScrolled && !isMobileMenuOpen
+  const headerBg = isMobileMenuOpen || (isHome && !isScrolled)
     ? 'bg-transparent'
     : 'bg-white/85 backdrop-blur-xl shadow-sm';
 

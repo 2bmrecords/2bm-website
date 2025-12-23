@@ -27,7 +27,12 @@ export default function Home() {
             loop
             muted
             playsInline
+            controls={false}
             preload="auto"
+            onLoadedData={() => {
+              // Force play when data is loaded, helps on some mobile browsers
+              videoRef.current?.play().catch(() => { });
+            }}
           >
             <source src="/hero.mp4" type="video/mp4" />
           </video>
