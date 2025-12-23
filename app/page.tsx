@@ -7,11 +7,22 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Ensure video plays on mobile (sometimes requires explicit play formatting)
+    // Explicitly set muted/playsInline on mount to ensure mobile autoplay works
     if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log("Video play failed:", error);
-      });
+      videoRef.current.muted = true;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.playsInline = true;
+      videoRef.current.setAttribute('playsinline', '');
+      videoRef.current.setAttribute('muted', '');
+
+      const playVideo = async () => {
+        try {
+          await videoRef.current?.play();
+        } catch (err) {
+          console.log("Video autoplay failed:", err);
+        }
+      };
+      playVideo();
     }
   }, []);
 
@@ -20,22 +31,20 @@ export default function Home() {
       <div className="relative h-[calc(100vh-96px)] bg-white">
         <section className="relative h-full w-full pb-8">
           {/* BACKGROUND VIDEO */}
-          <video
-            ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            autoPlay
-            loop
-            muted
-            playsInline
-            controls={false}
-            preload="auto"
-            onLoadedData={() => {
-              // Force play when data is loaded, helps on some mobile browsers
-              videoRef.current?.play().catch(() => { });
-            }}
-          >
-            <source src="/hero.mp4" type="video/mp4" />
-          </video>
+          <div className="absolute inset-0 z-0 pointer-events-none select-none">
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls={false}
+              preload="auto"
+            >
+              <source src="/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
 
           {/* BOTTOM FADE */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white via-white/70 to-transparent backdrop-blur-[2px] z-10" />
