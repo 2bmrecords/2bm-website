@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <main className="-mt-24">
-      <div className="relative h-[calc(100vh-96px)] bg-white">
+      <div className="relative h-[calc(100vh-96px)] bg-brand-cream">
         <section className="relative h-full w-full pb-8">
           {/* BACKGROUND VIDEO */}
           <div className="absolute inset-0 z-0 pointer-events-none select-none">
@@ -47,7 +47,7 @@ export default function Home() {
           </div>
 
           {/* BOTTOM FADE */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white via-white/70 to-transparent backdrop-blur-[2px] z-10" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-brand-cream via-brand-cream/70 to-transparent backdrop-blur-[2px] z-10" />
 
           {/* TAGLINE */}
 

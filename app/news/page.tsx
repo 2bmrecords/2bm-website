@@ -55,7 +55,7 @@ export default function NewsPage() {
   const gridItems = showFeatured ? filteredNews.slice(1) : filteredNews;
 
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen text-black">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
 
         {/* Header */}

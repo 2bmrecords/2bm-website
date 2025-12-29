@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: #ffffff;
+  --bg: #F5F2EB;
   --fg: #0d0d0d;
   --brand-blue: #002BFF;
 }
@@ -18,19 +18,23 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #e5e5e5;
   border-radius: 20px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: #d4d4d4;
 }
 
 /* GLOBAL FONT */
-html, body {
+html,
+body {
   background: var(--bg);
   color: var(--fg);
   font-feature-settings: "ss01" on, "liga" on;
@@ -57,13 +61,11 @@ html, body {
 
 /* BUTTONS — Interactive */
 .btn {
-  @apply inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-brand-yellow text-black font-semibold 
-  transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md;
+  @apply inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-brand-yellow text-black font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md;
 }
 
 .btn-outline {
-  @apply inline-flex items-center gap-2 rounded-2xl px-6 py-3 border border-neutral-300 font-medium
-  transition-all duration-300 hover:bg-neutral-50 active:scale-[0.98];
+  @apply inline-flex items-center gap-2 rounded-2xl px-6 py-3 border border-neutral-300 font-medium transition-all duration-300 hover:bg-neutral-50 active:scale-[0.98];
 }
 
 /* CARDS — Premium diffuse shadow */
@@ -71,9 +73,10 @@ html, body {
   @apply rounded-2xl border border-neutral-100 bg-white transition-all duration-300;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
 }
+
 .card:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  border-color: rgba(0,0,0,0.08);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 /* BADGES */

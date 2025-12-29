@@ -25,7 +25,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
     }
 
     return (
-        <main className="min-h-screen bg-white text-black">
+        <main className="min-h-screen text-black">
             <div className="max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-20">
                 <FadeIn direction="down">
                     <Link

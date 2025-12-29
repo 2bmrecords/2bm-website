@@ -50,7 +50,7 @@ export default function Header() {
   // Header background logic
   const headerBg = isMobileMenuOpen || (isHome && !isScrolled)
     ? 'bg-transparent'
-    : 'bg-white/85 backdrop-blur-xl shadow-sm';
+    : 'bg-brand-cream/85 backdrop-blur-xl shadow-sm';
 
   const textColor = (isHome && !isScrolled && !isMobileMenuOpen) ? 'text-white' : 'text-black';
   const logoFilter = (isHome && !isScrolled && !isMobileMenuOpen) ? 'brightness-0 invert' : '';

@@ -1,47 +1,71 @@
+import { Instagram, Mail, Youtube } from 'lucide-react';
+// @ts-ignore - Tiktok might not be exported in all versions, using fallback if needed or assuming it exists based on version
+import { Music2 } from 'lucide-react';
+
+// Check if Tiktok icon exists in lucide-react, if not we can use a custom SVG or fallback
+// Since we can't easily check at runtime in this environment without running code, we will assume standard Lucide icons or use a reliable set.
+// However, Lucide 'Twitter' is 'Twitter', 'X' is not standard? 'Youtube', 'Instagram', 'Mail' are standard.
+// For Tiktok, let's use a clear SVG if unsure, or 'Music2' as a placeholder if we want to be safe, but user specifically asked for Tiktok.
+// The user has lucide-react ^0.555.0, which definitely has 'Twitter' and likely 'Tiktok' was added recently but let's verify.
+// Actually, 'Tiktok' is NOT in standard lucide-react export list in some versions.
+// I will provide an SVG for TikTok to be safe and aesthetic.
+
 export default function Footer() {
+  const ICON_SIZE = 20;
+  const SOCIALS = [
+    {
+      name: 'TikTok',
+      href: 'https://www.tiktok.com/@twobiquitousmusic', // Guessing or placeholder
+      icon: (
+        <svg
+          width={ICON_SIZE}
+          height={ICON_SIZE}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+        </svg>
+      ),
+    },
+    {
+      name: 'YouTube',
+      href: 'https://youtube.com/@twobiquitousmusic', // Placeholder
+      icon: <Youtube size={ICON_SIZE} />,
+    },
+    {
+      name: 'Instagram',
+      href: 'https://instagram.com/twobiquitousmusic', // Placeholder
+      icon: <Instagram size={ICON_SIZE} />,
+    },
+    {
+      name: 'Email',
+      href: 'mailto:contact@twobiquitousmusic.com',
+      icon: <Mail size={ICON_SIZE} />,
+    },
+  ];
+
   return (
-    <footer className="w-full bg-neutral-950 text-white border-t border-neutral-900">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <h2 className="text-2xl font-bold tracking-tighter mb-6">TWO BIQUITOUS MUSIC</h2>
-            <p className="text-neutral-400 max-w-sm text-sm leading-relaxed">
-              Defining the sound of tomorrow. A global record label dedicated to empowering artists and pushing creative boundaries.
-            </p>
-          </div>
-
-          {/* Links */}
-          <div>
-            <h3 className="text-xs font-bold tracking-widest text-neutral-500 mb-6 uppercase">Company</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><a href="/about" className="text-neutral-300 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">About Us</a></li>
-              <li><a href="/news" className="text-neutral-300 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Newsroom</a></li>
-              <li><a href="/artists" className="text-neutral-300 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Artists</a></li>
-              <li><a href="/careers" className="text-neutral-300 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Careers</a></li>
-            </ul>
-          </div>
-
-          {/* Social / Contact */}
-          <div>
-            <h3 className="text-xs font-bold tracking-widest text-neutral-500 mb-6 uppercase">Connect</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><a href="#" className="text-neutral-300 hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block">Instagram</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block">Twitter / X</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block">LinkedIn</a></li>
-              <li><a href="/contact" className="text-neutral-300 hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block">Contact Us</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-16 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-600">
-          <p>© 2025 Two Biquitous Music. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-        </div>
+    <footer className="w-full bg-brand-cream text-black py-8 flex items-center justify-center relative z-20">
+      <div className="flex items-center gap-8">
+        {SOCIALS.map((social) => (
+          <a
+            key={social.name}
+            href={social.href}
+            target={social.name === 'Email' ? undefined : '_blank'}
+            rel="noopener noreferrer"
+            className="text-black hover:text-neutral-500 hover:scale-110 transition-all duration-300"
+            aria-label={social.name}
+          >
+            {social.icon}
+          </a>
+        ))}
       </div>
     </footer>
   );
 }
+
+
