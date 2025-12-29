@@ -87,7 +87,7 @@ export default function Header() {
               : pathname.startsWith(item.href);
 
             const activeStyle = isHome && !isScrolled
-              ? 'bg-white text-black'
+              ? 'bg-brand-cream text-black'
               : 'bg-black text-white';
 
             return (
@@ -132,7 +132,7 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center md:hidden"
+              className="fixed inset-0 bg-brand-cream z-40 flex flex-col items-center justify-center md:hidden"
             >
               <nav className="flex flex-col items-center gap-8">
                 {NAV_ITEMS.map((item, i) => (
