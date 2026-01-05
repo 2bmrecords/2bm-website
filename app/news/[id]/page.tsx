@@ -59,13 +59,23 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
 
                     <FadeIn className="mb-12" delay={0.2}>
                         <div className="relative aspect-video w-full overflow-hidden rounded-sm bg-neutral-100">
-                            <Image
-                                src={newsItem.imageUrl}
-                                alt={newsItem.title}
-                                fill
-                                className="object-cover"
-                                priority
-                            />
+                            {newsItem.videoId ? (
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${newsItem.videoId}?autoplay=1&mute=0`}
+                                    title={newsItem.title}
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            ) : (
+                                <Image
+                                    src={newsItem.imageUrl}
+                                    alt={newsItem.title}
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            )}
                         </div>
                     </FadeIn>
 
@@ -80,6 +90,6 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
                     </FadeIn>
                 </article>
             </div>
-        </main>
+        </main >
     );
 }

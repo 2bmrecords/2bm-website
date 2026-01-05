@@ -48,9 +48,11 @@ export default function Header() {
   const isHome = pathname === '/';
 
   // Header background logic
-  const headerBg = isMobileMenuOpen || (isHome && !isScrolled)
-    ? 'bg-transparent'
-    : 'bg-brand-cream/85 backdrop-blur-xl shadow-sm';
+  const headerBg = isMobileMenuOpen
+    ? 'bg-brand-cream'
+    : (isHome && !isScrolled)
+      ? 'bg-transparent'
+      : 'bg-brand-cream/85 backdrop-blur-xl shadow-sm';
 
   const textColor = (isHome && !isScrolled && !isMobileMenuOpen) ? 'text-white' : 'text-black';
   const logoFilter = (isHome && !isScrolled && !isMobileMenuOpen) ? 'brightness-0 invert' : '';
@@ -128,18 +130,18 @@ export default function Header() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <MotionDiv
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="fixed inset-0 bg-brand-cream z-40 flex flex-col items-center justify-center md:hidden"
             >
               <nav className="flex flex-col items-center gap-8">
                 {NAV_ITEMS.map((item, i) => (
                   <MotionDiv
                     key={item.href}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ delay: 0.1 + i * 0.1 }}
                   >
                     <Link
