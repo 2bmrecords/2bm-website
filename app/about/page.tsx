@@ -18,11 +18,11 @@ export default function AboutPage() {
           <FadeIn delay={0.2} direction="up">
             <div className="space-y-8 text-lg md:text-xl leading-relaxed text-neutral-800">
               <p>
-                <span className="font-semibold">2BM</span> is a record company focused on supporting and developing the career&apos;s of tomorrow&apos;s defining artists and shaping today&apos;s sound. Music is the backbone of life and culture, and the artists who create authentically deserve to shine globally.
+                <span className="font-semibold">2BM</span> is a record company focused on supporting and developing the career&apos;s of tomorrow&apos;s defining artists and shaping today&apos;s sound. Our main focus is to continuously shift the global mainstream music industry by incorporating sounds and cultures that aren&apos;t heard anywhere else.
               </p>
 
               <p>
-                Our purpose is to champion and partner with visionary creatives who set the pace for where music is headed, giving them support across recorded music, film, brand partnerships, visual storytelling, and building meaningful artist-to-fan connections. Real artistry deserves to be everywhere - woven into the world ubiquitously.
+                Our purpose is to champion and partner with visionary creatives who set the pace for where music is headed, giving them support across recorded music, film, brand partnerships, visual storytelling, and building meaningful artist-to-fan connections. We ensure that these unique sonic identities are not only heard but succeed in mainstream facets. Real artistry deserves to be everywhere - woven into the world ubiquitously.
               </p>
             </div>
           </FadeIn>
@@ -36,7 +36,7 @@ export default function AboutPage() {
                 <div className="group">
                   <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">VISION</h3>
                   <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
-                    To elevate artists who push boundaries and redefine what&apos;s possible in music and culture.
+                    To elevate artists who push boundaries and introduce unheard global sounds to the mainstream culture.
                   </p>
                 </div>
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 <div className="group">
                   <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">VALUES</h3>
                   <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
-                    Authenticity, innovation, and partnership. We believe real artistry deserves to be ubiquitous.
+                    Authenticity, innovation, and partnership. We believe unique cultural expressions deserve success ubiquitously.
                   </p>
                 </div>
               </div>
