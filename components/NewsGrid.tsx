@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "./FadeIn";
@@ -17,6 +19,8 @@ interface NewsGridProps {
 }
 
 export default function NewsGrid({ items }: NewsGridProps) {
+    const [showAll, setShowAll] = useState(false);
+
     if (items.length === 0) {
         return (
             <div className="w-full py-20 text-center text-neutral-500">
@@ -24,8 +28,6 @@ export default function NewsGrid({ items }: NewsGridProps) {
             </div>
         );
     }
-
-    const [showAll, setShowAll] = useState(false);
     const INITIAL_DISPLAY_COUNT = 3;
 
     // Only apply the limit if we haven't clicked "show all"
