@@ -21,7 +21,7 @@ export const MOCK_NEWS: NewsItem[] = [
         content: [
             "In a historic moment for the platform, Sehaj recently performed his song 'Flow State' on On The Radar Radio, marking the first time the tabla has ever been featured on the show.",
             "The performance featured Sehaj with Brendan Mark on saxophone, Trevor Banks as DJ, and Shaan Chhadva on piano, showcasing the versatility of the tabla in a contemporary setting.",
-            "This milestone perfectly embodies the ethos of Two Biquitous Music: bridging the gap between global musical traditions and western mainstream spaces. By bringing instruments like the tabla to platforms like On The Radar, 2BM continues to challenge genre boundaries and redefine what modern pop and hip-hop can look like."
+            "This milestone perfectly embodies the ethos of 2BM: bridging the gap between global musical traditions and western mainstream spaces. By bringing instruments like the tabla to platforms like On The Radar, 2BM continues to challenge genre boundaries and redefine what modern pop and hip-hop can look like."
         ]
     },
     {
