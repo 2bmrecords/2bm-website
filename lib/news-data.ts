@@ -20,7 +20,7 @@ export const MOCK_NEWS: NewsItem[] = [
         imageUrl: "/launch_imageee.png",
         thumbnailUrl: "/vsco.jpeg",
         content: [
-            "'Concrete Vinyl', now on its second week of release, marks a pivotal moment not only for artist Sehaj, but for Two Biquitous Music as a whole. As the first officially released song under the 2BM catalog, this single represents the tangible beginning of the label's mission to bring innovative, genre-defying music to the world.",
+            "'Concrete Vinyl', now on its second week of release, marks a pivotal moment not only for artist Sehaj, but for Two Biquitous Music as a whole. As the first officially released song under the 2BM catalog, this single represents the tangible beginning of the label's vision to bring innovative, genre-defying music to the world.",
             "The track is a testament to the meticulous production and creative direction that defines 2BM's approach to artist development.",
             "This release signals the beginning of many projects to come, to push boundaries and challenge the algorithm of modern music. Sehaj's work under the 2BM umbrella demonstrates the label's commitment to nurturing talent that transcends traditional genre classifications.",
             "The single is now available on all major streaming platforms. Listen to 'Concrete Vinyl' on Spotify, Apple Music, and other streaming services.",
