@@ -14,7 +14,7 @@ export default function FeaturedNews({ item }: FeaturedNewsProps) {
                     {/* Image */}
                     <div className="relative aspect-[16/9] lg:aspect-[4/3] w-full overflow-hidden rounded-2xl">
                         <Image
-                            src={item.imageUrl}
+                            src={item.thumbnailUrl || item.imageUrl}
                             alt={item.title}
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105"

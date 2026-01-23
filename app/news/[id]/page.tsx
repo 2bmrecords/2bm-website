@@ -1,5 +1,6 @@
 import { MOCK_NEWS } from "@/lib/news-data";
 import FadeIn from "@/components/FadeIn";
+import NewsContent from "@/components/NewsContent";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -80,13 +81,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
                     </FadeIn>
 
                     <FadeIn delay={0.3}>
-                        <div className="prose prose-lg max-w-none prose-neutral">
-                            {newsItem.content.map((paragraph, index) => (
-                                <p key={index} className="mb-6 text-lg leading-relaxed text-neutral-800">
-                                    {paragraph}
-                                </p>
-                            ))}
-                        </div>
+                        <NewsContent paragraphs={newsItem.content} />
                     </FadeIn>
                 </article>
             </div>

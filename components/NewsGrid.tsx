@@ -12,6 +12,7 @@ export interface NewsItem {
     category: string;
     date: string; // ISO date string or formatted date
     imageUrl: string;
+    thumbnailUrl?: string; // Optional separate thumbnail image
 }
 
 interface NewsGridProps {
@@ -34,16 +35,38 @@ export default function NewsGrid({ items }: NewsGridProps) {
     const visibleItems = showAll ? items : items.slice(0, INITIAL_DISPLAY_COUNT);
     const hasMore = items.length > INITIAL_DISPLAY_COUNT;
 
+    const handleShowMore = () => {
+        setShowAll(true);
+        // Scroll to show the newly loaded articles with a smooth animation
+        setTimeout(() => {
+            const newsGrid = document.querySelector('[data-news-grid]');
+            if (newsGrid) {
+                newsGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }, 100);
+    };
+
+    const handleShowLess = () => {
+        setShowAll(false);
+        // Scroll back to top of grid smoothly
+        setTimeout(() => {
+            const newsGrid = document.querySelector('[data-news-grid]');
+            if (newsGrid) {
+                newsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100);
+    };
+
     return (
         <div className="flex flex-col items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 font-sans w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 font-sans w-full" data-news-grid>
                 {visibleItems.map((item, index) => (
                     <FadeIn key={item.id} delay={index * 0.1} className="h-full">
                         <Link href={`/news/${item.id}`} className="group cursor-pointer flex flex-col h-full transform transition-transform duration-300 hover:-translate-y-1">
                             <article className="flex flex-col h-full h-full bg-transparent">
                                 <div className="relative aspect-[16/9] mb-6 overflow-hidden rounded-lg border border-neutral-100 shadow-sm group-hover:shadow-md transition-shadow">
                                     <Image
-                                        src={item.imageUrl}
+                                        src={item.thumbnailUrl || item.imageUrl}
                                         alt={item.title}
                                         fill
                                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -83,13 +106,29 @@ export default function NewsGrid({ items }: NewsGridProps) {
             {hasMore && !showAll && (
                 <FadeIn delay={0.2} className="mt-16 text-center">
                     <button
-                        onClick={() => setShowAll(true)}
+                        onClick={handleShowMore}
                         className="group flex flex-col items-center gap-2 text-neutral-400 hover:text-black transition-colors"
                     >
                         <span className="text-sm font-bold tracking-widest uppercase">Show More</span>
                         <div className="p-3 rounded-full border border-neutral-200 group-hover:border-black transition-colors">
                             <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </div>
+                    </button>
+                </FadeIn>
+            )}
+
+            {showAll && (
+                <FadeIn delay={0.2} className="mt-16 text-center">
+                    <button
+                        onClick={handleShowLess}
+                        className="group flex flex-col items-center gap-2 text-neutral-400 hover:text-black transition-colors"
+                    >
+                        <span className="text-sm font-bold tracking-widest uppercase">Show Less</span>
+                        <div className="p-3 rounded-full border border-neutral-200 group-hover:border-black transition-colors">
+                            <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                             </svg>
                         </div>
                     </button>
