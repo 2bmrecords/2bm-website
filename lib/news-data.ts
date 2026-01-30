@@ -84,16 +84,16 @@ export const MOCK_NEWS: NewsItem[] = [
     },
     {
         id: "4",
-        title: "LADY BABYLON'S RECORDING SESSIONS IN SLIDE STUDIOS BROOKLYN",
-        description: "Rising artist, Lady Babylon, records new music in Brooklyn, NY.",
+        title: "SUFIRO'S RECORDING SESSIONS IN SLIDE STUDIOS BROOKLYN",
+        description: "Rising artist, Sufiro, records new music in Brooklyn, NY.",
         category: "Recorded Music",
         date: "2025-12-15",
         imageUrl: "/lady babylon.jpeg",
         content: [
-            "Lady Babylon has spent some time at the legendary Slide Studios in Brooklyn, NY, deep in recording sessions for her highly anticipated debut project. Known for her ethereal vocals and poetic lyricism, the artist is working on a concept project that pushes the boundaries of her genre.",
-            "Slide Studios, famous for hosting multiple influential indie acts in the last few years, provides the perfect foundation for Lady Babylon's creative process.",
-            "The sessions were described as 'electric' and 'intense.' Capturing live instrumentation, and experimenting with tape loops, Lady Babylon is creating something special.",
-            "Fans can expect a lead single early next year, with the full project to follow. These Brooklyn sessions mark a pivotal moment in Lady Babylon's career, as she refines her artistic identity under 2BM."
+            "Sufiro has spent some time at the legendary Slide Studios in Brooklyn, NY, deep in recording sessions for her highly anticipated debut project. Known for her ethereal vocals and poetic lyricism, the artist is working on a concept project that pushes the boundaries of her genre.",
+            "Slide Studios, famous for hosting multiple influential indie acts in the last few years, provides the perfect foundation for Sufiro's creative process.",
+            "The sessions were described as 'electric' and 'intense.' Capturing live instrumentation, and experimenting with tape loops, Sufiro is creating something special.",
+            "Fans can expect a lead single early next year, with the full project to follow. These Brooklyn sessions mark a pivotal moment in Sufiro's career, as she refines her artistic identity under 2BM."
         ]
     },
 ];
