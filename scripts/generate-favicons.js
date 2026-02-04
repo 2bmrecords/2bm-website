@@ -43,13 +43,13 @@ async function processImage(inputPath, outputPath) {
 
 async function main() {
     console.log('Generating favicons...');
-    // Light Mode -> Needs Dark Logo (logo.png)
+    // Light Mode -> Needs Dark Logo (2BM_black_transparent.png)
     // This will appear on light backgrounds.
-    await processImage('public/logo.png', 'public/favicon-square-light.png');
+    await processImage('public/2BM_black_transparent.png', 'public/favicon-square-light.png');
 
-    // Dark Mode -> Needs White Logo (white logo.png)
+    // Dark Mode -> Needs White Logo (2BM_white_transparent.png)
     // This will appear on dark backgrounds.
-    await processImage('public/white logo.png', 'public/favicon-square-dark.png');
+    await processImage('public/2BM_white_transparent.png', 'public/favicon-square-dark.png');
     console.log('Done.');
 }
 

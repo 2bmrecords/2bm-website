@@ -4,7 +4,7 @@ async function createIcoFavicon() {
     try {
         // For .ico files, we'll create a smaller version (32x32 is standard for favicons)
         // We'll use the dark logo as the default
-        const image = await Jimp.read('public/logo.png');
+        const image = await Jimp.read('public/2BM_black_transparent.png');
 
         const ICO_SIZE = 32;
         const CONTENT_SIZE = ICO_SIZE * 0.75; // 75% for padding

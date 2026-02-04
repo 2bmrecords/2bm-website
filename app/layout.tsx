@@ -1,12 +1,20 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import DynamicFavicon from '../components/DynamicFavicon';
 
-const inter = Inter({ subsets: ['latin'] });
+const hostGrotesk = localFont({
+  src: [
+    {
+      path: '../public/Host_Grotesk/HostGrotesk-VariableFont_wght.ttf',
+      weight: '400 700',
+      style: 'normal',
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: 'Two Biquitous Music',
@@ -17,11 +25,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Two Biquitous Music',
-    images: ['/logo.png'],
+    images: ['/2BM_black_transparent.png'],
   },
   icons: {
-    icon: '/real favicon1.png',
-    apple: '/real favicon1.png',
+    icon: [
+      {
+        url: '/2BM_white_favicon.png',
+        sizes: '1024x1024',
+        type: 'image/png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/2BM_black_favicon.png',
+        sizes: '1024x1024',
+        type: 'image/png',
+        media: '(prefers-color-scheme: light)',
+      },
+    ],
+    apple: '/2BM_black_favicon.png',
   },
 };
 
@@ -32,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body className={`${hostGrotesk.className} min-h-screen flex flex-col`}>
         <DynamicFavicon />
         <Header />
         <div className="pt-24 flex-grow bg-brand-cream">

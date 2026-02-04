@@ -12,6 +12,22 @@ export interface NewsItem {
 
 export const MOCK_NEWS: NewsItem[] = [
     {
+        id: "7",
+        title: "SUFIRO DEBUTS LIVE WITH 'FRANGIPANI' PERFORMANCE",
+        description: "Rising artist Sufiro captivates industry friends with an intimate debut performance, marking the official start of her artistic journey.",
+        category: "Featured",
+        date: "2026-01-31",
+        imageUrl: "/sufiro performance.png",
+        thumbnailUrl: "/slayyy copy.png",
+        content: [
+            "In an intimate gathering of artists and producers, Sufiro took to the stage for her debut live performance, unveiling her upcoming single 'Frangipani' to an audience of creative collaborators and industry friends. The moment marked the beginning of Sufiro's journey as an artist.",
+            "The performance was met with overwhelming enthusiasm from the crowd, who recognized the artistry and vision at the heart of her work. 'Frangipani' resonated deeply with those in attendance, showcasing Sufiro's unique sonic perspective and the emotional depth she brings to her music.",
+            "Sufiro's emergence as an artist represents another chapter in 2BM's commitment to nurturing diverse talent. Her distinctive approach to songwriting and production, combined with her captivating stage presence, signals a fresh voice within the label's growing artist partners.",
+            "The single 'Frangipani' is set to see wider release as Sufiro continues to develop her craft and expand her presence. This debut performance serves as the launchpad for what promises to be a compelling and innovative artistic trajectory.",
+            "For 2BM, Sufiro's arrival marks the continued diversification of its catalog, artist partners, and the label's ability to work and create with transformative talent. The best is yet to come as Sufiro steps boldly into her role as an artist."
+        ]
+    },
+    {
         id: "6",
         title: "CONCRETE VINYL: SEHAJ'S DEBUT SINGLE MARKS HISTORIC MOMENT FOR 2BM",
         description: "The first released song under 2BM's catalog showcases Sehaj's evolution as an artist and signals the beginning of the label's journey.",

@@ -55,12 +55,12 @@ export default function Home() {
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-center items-center">
             <FadeIn delay={0.2} direction="up">
               <Image
-                src="/logo.png"
+                src="/2BM+TwoBM_black_transparent.png"
                 alt="Two Biquitous Music"
-                width={500}
-                height={100}
-                className="max-w-[400px] h-auto object-contain invert"
-                style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 2px rgba(0,0,0,1)) drop-shadow(0 0 3px rgba(0,0,0,0.8))' }}
+                width={580}
+                height={116}
+                className="max-w-[480px] h-auto object-contain invert"
+                style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.90)) drop-shadow(0 0 2px rgba(0,0,0,0.90)) drop-shadow(0 0 3px rgba(0,0,0,0.70))' }}
                 priority
               />
             </FadeIn>
@@ -69,7 +69,7 @@ export default function Home() {
           {/* TAGLINE */}
           <div className="absolute inset-x-0 bottom-10 z-20 flex justify-center items-center px-4">
             <FadeIn delay={0.4} direction="up">
-              <p className="text-sm md:text-base tracking-[0.25em] md:tracking-[0.35em] uppercase text-black text-center font-medium md:whitespace-nowrap max-w-[90vw] md:max-w-none mx-auto text-balance">
+              <p className="text-base md:text-lg tracking-[0.25em] md:tracking-[0.35em] uppercase text-black text-center font-[450] md:whitespace-nowrap max-w-[90vw] md:max-w-none mx-auto text-balance">
                 THE HOME FOR ARTISTS WHO DEFINE TODAY&apos;S SOUND.
               </p>
             </FadeIn>

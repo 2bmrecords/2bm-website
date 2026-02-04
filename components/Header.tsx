@@ -62,21 +62,13 @@ export default function Header() {
       <div className={`relative flex items-center justify-between px-6 md:px-12 transition-all duration-500 ease-out ${isScrolled ? 'h-20' : 'h-24'}`}>
 
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-6 group z-50">
+        <Link href="/" className="flex items-center gap-8 group z-50 ml-auto md:ml-0">
           <Image
-            src="/logo.png"
+            src="/2BM_black_transparent copy.png"
             alt="Two Biquitous Music"
-            width={300}
-            height={150}
-            className={`h-10 md:h-12 w-auto transition-all duration-300 ${logoFilter}`}
-            priority
-          />
-          <Image
-            src="/logo2.png"
-            alt="Two Biquitous Music Text Logo"
-            width={500}
-            height={100}
-            className={`h-8 w-auto hidden md:block transition-all duration-300 ${logoFilter}`}
+            width={320}
+            height={160}
+            className={`h-7 md:h-8 w-auto transition-all duration-300 ${logoFilter}`}
             priority
           />
         </Link>
