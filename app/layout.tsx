@@ -30,19 +30,25 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/2BM_white_favicon.png',
+        url: '/2BM_black_favicon.png?v=2',
+        sizes: '1024x1024',
+        type: 'image/png',
+      },
+      {
+        url: '/2BM_white_favicon.png?v=2',
         sizes: '1024x1024',
         type: 'image/png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/2BM_black_favicon.png',
+        url: '/2BM_black_favicon.png?v=2',
         sizes: '1024x1024',
         type: 'image/png',
         media: '(prefers-color-scheme: light)',
       },
     ],
-    apple: '/2BM_black_favicon.png',
+    apple: '/2BM_black_favicon.png?v=2',
+    shortcut: '/2BM_black_favicon.png?v=2',
   },
 };
 
