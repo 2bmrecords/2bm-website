@@ -36,7 +36,7 @@ export default function AboutPage() {
                 <div className="group">
                   <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">VISION</h3>
                   <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
-                    Continue to shape today's sound and introduce unheard cultures to the mainstream.
+                    Continue to shape today&apos;s sound and introduce unheard cultures to the mainstream.
                   </p>
                 </div>
 
