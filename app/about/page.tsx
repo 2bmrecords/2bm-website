@@ -36,7 +36,7 @@ export default function AboutPage() {
                 <div className="group">
                   <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">VISION</h3>
                   <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
-                    To elevate artists who push boundaries and introduce unheard global sounds to the mainstream culture.
+                    Continue to shape today's sound and introduce unheard cultures to the mainstream.
                   </p>
                 </div>
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
                 <div className="group">
                   <h3 className="text-sm uppercase tracking-[0.3em] font-bold mb-4 text-black">MISSION</h3>
                   <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
-                    Provide comprehensive support across all aspects of an artist&apos;s career, from creation to global reach.
+                    Support all aspects of artists&apos; careers and music development, from creation to global reach.
                   </p>
                 </div>
 
