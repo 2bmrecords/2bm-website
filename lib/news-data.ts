@@ -24,7 +24,7 @@ export const MOCK_NEWS: NewsItem[] = [
             "By building relationships with innovators and established players alike, the label creates opportunities and resources that directly benefit its roster. Whether through access to cutting-edge technology, industry connections, or collaborative initiatives, these partnerships extend beyond typical label functions.",
             "The music industry is increasingly collaborative, and 2BM is positioning itself at the center of that network. Founder Sehajpreet Singh recently engaged with industry stakeholders to explore how emerging technology and production tools can serve 2BM's artists as they develop their craft.",
             "On a broader scale, 2BM partnerships are designed to be meaningful and sustainable.Each collaboration is evaluated against a single question: does this help our artists grow? The answer determines whether 2BM pursues further engagement.",
-            "As the label continues to grow, its strength lies not in isolation, but in the depth and quality of its partnerships. 2BM is committed to building an ecosystem where its artists have access to the best tools, knowledge, and opportunities the industry has to offer."
+            "As the label continues to grow, its strength lies not in isolation, but in the depth and quality of its partnerships. 2BM is committed to building an ecosystem where its artist partners have access to the best tools, knowledge, and opportunities the industry has to offer."
         ]
     },
     {
